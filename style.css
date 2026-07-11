@@ -1,0 +1,226 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #2F3A3B;
+  color: #F4F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Spacers ── */
+.spacer {
+  flex: 1;
+}
+
+/* ── Content Area ── */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 64px;
+}
+
+/* ── Icon Wrapper ── */
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #596A6C;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 1px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.icon-wrapper:hover {
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Card ── */
+.main-container {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 360px;
+  background: #3D4E50;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.45),
+    0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Inputs ── */
+
+#usertext,
+#useremail{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#usertext,
+#useremail {
+  width: 100%;
+  background: #C7D1D2;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #2F3A3B;
+  outline: none;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+#usertext::placeholder,
+#useremail::placeholder {
+  color: #7A9094;
+  /*opacity: 1;*/
+  font-weight: bold;
+  
+}
+
+#usertext:focus,
+#useremail:focus {
+  background: #D4DCDD;
+  border-color: rgba(155, 236, 198, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(155, 236, 198, 0.18),
+    0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+#usertext {
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+#useremail{
+  margin-top: 10px;
+}
+
+/* ── Card Footer ── */
+.userbutton {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userbutton{
+  margin-top: 10px;
+}
+
+#user-button {
+  background: #9BECC6;
+  color: #2F3A3B;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  min-height: 44px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#user-button:hover {
+  background: #7DE3B5;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(155, 236, 198, 0.35);
+}
+
+#user-button:active {
+  background: #6AD9AA;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+#user-button:focus-visible {
+  outline: 2px solid #9BECC6;
+  outline-offset: 3px;
+}
+
+/* —— Error Message——*/
+#usertext-error,
+#useremail-error {
+  /*border: 5px solid brown;*/
+  color: #9BECC6;
+}
+
+
+/* ── Footer ── */
+.footer  {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #2A3435;
+  border-top: 1px solid #3D4E50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.footer a,
+.footer p{
+  color: #596A6C;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.015em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.footer a:hover {
+  color: #8AABB0;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid #9BECC6;
+  outline-offset: 2px;
+  color: #8AABB0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .content-area {
+    padding: 0 20px 64px;
+  }
+}
+
+@media (min-width: 600px) {
+  .content-area {
+    padding: 0 32px 64px;
+  }
+}
