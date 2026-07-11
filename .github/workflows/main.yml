@@ -11,7 +11,7 @@ jobs:
       - name: Extract Archive
         run: |
           unzip Mainet.zip -d ./extracted-folder
-          rm filename.zip
+          rm Mainet.zip
 
       - name: Commit Extracted Files
         run: |
