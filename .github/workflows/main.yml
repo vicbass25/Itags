@@ -1,0 +1,23 @@
+name: Unzip Uploaded File
+on: [push]
+
+jobs:
+  unzip-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Extract Archive
+        run: |
+          unzip Mainet.zip -d ./extracted-folder
+          rm filename.zip
+
+      - name: Commit Extracted Files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Automated unzip of uploaded file" || exit 0
+          git push
+          
